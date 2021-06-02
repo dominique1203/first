@@ -1,0 +1,33 @@
+(async function () {
+
+var rfid;
+var pir;
+var led;
+
+
+boardReady({board: 'Smart', device: 'B7Gay', transport: 'mqtt'}, async function (board) {
+  board.samplingInterval = 50;
+  rfid = getRFID(board);
+  pir = getPir(board, 16);
+  led = getLed(board, 5);
+  pir.on('detected', async function(){
+    speak('請刷卡');
+    led.on();
+    await delay(3);
+    rfid.read();
+    rfid.on("enter",async function(_uid){
+      rfid._uid = _uid;
+      if (rfid._uid == '0042C3DB') {
+        speak('刷卡成功');
+        led.blink(500);
+        await delay(3);
+      } else {
+        speak('卡片錯誤');
+        led.off();
+      }
+    });
+
+  });
+});
+
+}());
