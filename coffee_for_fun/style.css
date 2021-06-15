@@ -1,0 +1,54 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    text-align: center;
+    color: sienna;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+     margin-top: 20px;
+     margin-bottom: 50px;
+}
+header nav img{
+    width: 100px;
+border-radius: 100%;
+}
+header li{
+    margin: 10px;
+    font-size: 20px;
+}
+#intro .jumbotron{
+    height: 60vh;
+}
+#intro .col-md-12 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#intro img{
+    width: 100%;
+    height: 100%;
+}
+#intro h1{
+    color: white;
+}
+#intro p{
+    color: white;
+}
+#intro ul img{
+    width: 300px;
+}  
+#intro ul{
+    list-style: none;
+    list-style-image: -moz-repeating-linear-gradient();
+}
+
+footer{
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
